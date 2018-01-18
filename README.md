@@ -8,7 +8,7 @@
 
 _This webpage takes in a string as input and returns the string translated into pig latin as output._
 
-_The rules of Pig Latin:_
+### The Rules of Pig Latin
 
 * For words beginning with a vowel, add "way" to the end.
 
