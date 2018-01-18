@@ -15,7 +15,9 @@ var leadingConsonants = function(english) {
 };
 
 var pigLatinWord = function(english) {
-  if (!english.match(/^[a-zA-Z ]+$/)) {
+  if (english.match(/[^aeiou]+$/i)) {
+    return ("That's not a word! Please enter a real word or phrase.");
+  } else if (!english.match(/^[a-zA-Z ]+$/)) {
     return ("Please enter text only");
   } else if (english.length === 1) {
     return english + "ay";
@@ -23,8 +25,7 @@ var pigLatinWord = function(english) {
     return english + "way";
   } else if (!vowels.includes(english[0])) {
     return leadingConsonants(english);
-  }
-  else {
+  } else {
     return ("Can't compute yet");
   }
 };
