@@ -1,34 +1,53 @@
-# Webpage Template
+# Pig Latin
 
-#### template to be used for creating new websites, 1-9-18
+#### webpage that translates a phrase into pig latin, 1-18-18
 
-#### _By Sara Hamilton_
+#### _By Sara Hamilton and Maggie Summers_
 
 ## Description
 
-_{This is a detailed description of your application, its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This webpage takes in a string as input and returns the string translated into pig latin as output._
+
+_The rules of Pig Latin:
+
+* For words beginning with a vowel, add "way" to the end.
+
+* For words beginning with one or more consonants, move all of the first consecutive consonants to the end, and add "ay".
+
+* If the first consonants include "qu", move the "u" along with the "q". Don't forget about words like "squeal" where "qu" doesn't come first!
+
+* For words beginning with "y", treat "y" as a consonant._
+
+
+1. The program does nothing to non-alphabetical characters, since they do not contain consonants or vowels.
+* Input Example: 3
+* Output Example: 3
+2. The program adds "ay" to single-letter words beginning with a vowel.
+* Input Example: i
+* Output Example: iay
+3. The program adds "way" to the end of word beginning with a vowel.
+* Input Example: object
+* Output Example: objectway
+4. The program treats "y" as a consonant for words beginning with "y".
+* Input Example: your
+* Output Example: ouryay
+5. The program moves all of the first consecutive consonants to the end of words beginning with one or more consonants and adds "ay".
+* Input Example: think
+* Output Example: inkthay
+6. The program moves the "q" and "u" together to the end of a word for words where "q" is one of the first consonants and is followed by "u" .
+* Input Example: squeal
+* Output Example: ealsquay
+
 
 ## Setup/Installation Requirements
 
-* _Create a new repository in GitHub_
-```
-https://github.com/user-name/new-repository-name.git
-```
+* _Clone repository
 
-* _Create a bare clone of this repository_
-```
-git clone --bare https://github.com/Sara-Hamilton/template.git
-```
+* _Open in text editor_
 
-* _Move into the template directory_
-```
-cd template.git
-```
+* _Open in Browser_
 
 * _Mirror push to the new repository_
-```
-git push --mirror https://github.com/user-name/new-repository-name.git
-```
 
 ## Support and contact details
 
@@ -45,7 +64,7 @@ _To suggest changes, submit a pull request in the GitHub repository._
 
 *MIT License*
 
-Copyright (c) 2018 **_Sara Hamilton_**
+Copyright (c) 2018 **_Sara Hamilton and Maggie Summers_**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
