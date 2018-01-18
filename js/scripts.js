@@ -16,8 +16,8 @@ var leadingConsonants = function(english) {
 
 var pigLatinWord = function(english) {
   if (!english.match(/^[a-zA-Z ]+$/)) {
-    alert("Please enter text only")
-  } else if (english.length === 1 && vowels.includes(english)) {
+    return ("Please enter text only");
+  } else if (english.length === 1) {
     return english + "ay";
   } else if (vowels.includes(english.charAt(0))) {
     return english + "way";
@@ -38,7 +38,7 @@ var pigLatin = function(english) {
     pigLatinSentence += translatedWord;
   });
   return pigLatinSentence;
-}
+};
 
 // party logic
 $(document).ready(function() {
@@ -49,5 +49,6 @@ $(document).ready(function() {
     var result = pigLatin(english);
 
     $("#result").text(result);
+    $("#pigLatinForm").trigger("reset");
   });
 });
