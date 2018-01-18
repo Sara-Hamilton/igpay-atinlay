@@ -5,9 +5,26 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/scripts.js"></script>
-    <title></title>
+    <title>Pig Latin Translator</title>
   </head>
   <body>
+    <div class="container">
+      <h1>Pig Latin Translator</h1>
+
+      <form id="pigLatinForm">
+        <div class="form-group">
+          <label for="english">Enter a word to translate into Pig Latin:</label>
+          <input id="english" type="text">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Translate</button>
+      </form>
+
+      <div id="result">
+        <span class="pigLatin"></span>
+      </div>
+
+    </div>
 
   </body>
 </html>
