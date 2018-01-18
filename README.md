@@ -8,7 +8,7 @@
 
 _This webpage takes in a string as input and returns the string translated into pig latin as output._
 
-_The rules of Pig Latin:
+_The rules of Pig Latin:_
 
 * For words beginning with a vowel, add "way" to the end.
 
@@ -16,8 +16,9 @@ _The rules of Pig Latin:
 
 * If the first consonants include "qu", move the "u" along with the "q". Don't forget about words like "squeal" where "qu" doesn't come first!
 
-* For words beginning with "y", treat "y" as a consonant._
+* For words beginning with "y", treat "y" as a consonant.
 
+### Specifications
 
 1. The program does nothing to non-alphabetical characters, since they do not contain consonants or vowels.
 * Input Example: 3
@@ -41,7 +42,7 @@ _The rules of Pig Latin:
 
 ## Setup/Installation Requirements
 
-* _Clone repository
+* _Clone repository_
 
 * _Open in text editor_
 
