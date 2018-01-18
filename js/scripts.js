@@ -10,7 +10,9 @@ var leadingConsonants = function(english) {
 }
 
 var pigLatin = function(english) {
-  if (english.length === 1 && vowels.includes(english)) {
+  if (!english.match(/^[a-zA-Z]+$/)) {
+    alert("Please enter text only")
+  } else if (english.length === 1 && vowels.includes(english)) {
     return english + "ay";
   } else if (vowels.includes(english.charAt(0))) {
     return english + "way";
