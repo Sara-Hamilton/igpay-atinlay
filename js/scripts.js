@@ -4,10 +4,15 @@ var vowels = ["a", "e", "i", "o", "u"]
 var leadingConsonants = function(english) {
   for (var index = 0; !vowels.includes(english[index]); index += 1) {
   }
-  var firstLetters = english.slice(0, index);
-  var middleLetters = english.slice(index);
+  if (english[index] === "u" && english[index - 1] === "q") {
+    var firstLetters = english.slice(0, index + 1);
+    var middleLetters = english.slice(index + 1);
+  } else {
+    var firstLetters = english.slice(0, index);
+    var middleLetters = english.slice(index);
+  }
   return middleLetters + firstLetters + "ay";
-}
+};
 
 var pigLatin = function(english) {
   if (!english.match(/^[a-zA-Z]+$/)) {
