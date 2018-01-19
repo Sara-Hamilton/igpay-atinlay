@@ -1,6 +1,16 @@
 // biz logic
 var vowels = ["a", "e", "i", "o", "u"]
 
+var vowelCheck = function(english) {
+  for (var index = 0; index <= english.length ; index += 1) {
+    if (vowels.includes(english[index])) {
+      return true;
+    }
+  }
+  console.log(index);
+  return false;
+};
+
 var leadingConsonants = function(english) {
   for (var index = 0; !vowels.includes(english[index]); index += 1) {
   }
@@ -15,10 +25,12 @@ var leadingConsonants = function(english) {
 };
 
 var pigLatinWord = function(english) {
-  if (english.match(/[^aeiou]+$/i)) {
-    return ("That's not a word! Please enter a real word or phrase.");
-  } else if (!english.match(/^[a-zA-Z ]+$/)) {
+  var vowelResult = vowelCheck(english);
+
+  if (!english.match(/^[a-zA-Z ]+$/)) {
     return ("Please enter text only");
+  } else if (vowelResult === false) {
+      return ("That's not a word.  Please enter a real word or phrase.");
   } else if (english.length === 1) {
     return english + "ay";
   } else if (vowels.includes(english.charAt(0))) {
