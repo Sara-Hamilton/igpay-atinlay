@@ -7,7 +7,6 @@ var vowelCheck = function(english) {
       return true;
     }
   }
-  console.log(index);
   return false;
 };
 
@@ -28,9 +27,9 @@ var pigLatinWord = function(english) {
   var vowelResult = vowelCheck(english);
 
   if (!english.match(/^[a-zA-Z ]+$/)) {
-    return ("Please enter text only");
+    return ("Please enter text only - no characters that are not in the alphabet");
   } else if (vowelResult === false) {
-      return ("That's not a word.  Please enter a real word or phrase.");
+    return ("That's not a word.  Please enter a real word or phrase.");
   } else if (english.length === 1) {
     return english + "ay";
   } else if (vowels.includes(english.charAt(0))) {
@@ -43,6 +42,9 @@ var pigLatinWord = function(english) {
 };
 
 var pigLatin = function(english) {
+  if (!english.match(/^[a-zA-Z ]+$/)) {
+    return ("Please enter text only - no characters that are not in the alphabet");
+  } else {
   var words = english.split(" ");
   var pigLatinSentence = ("");
   var translatedWord = ("");
@@ -51,6 +53,7 @@ var pigLatin = function(english) {
     pigLatinSentence += translatedWord;
   });
   return pigLatinSentence;
+}
 };
 
 // party logic
