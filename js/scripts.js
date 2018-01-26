@@ -1,5 +1,5 @@
 // biz logic
-var vowels = ["a", "e", "i", "o", "u"]
+var vowels = ["a", "e", "i", "o", "u", "y"]
 
 var vowelCheck = function(english) {
   for (var index = 0; index <= english.length ; index += 1) {
@@ -16,6 +16,9 @@ var leadingConsonants = function(english) {
   if (english[index] === "u" && english[index - 1] === "q") {
     var firstLetters = english.slice(0, index + 1);
     var middleLetters = english.slice(index + 1);
+  } else if (english[0] === "y" || english[0] === "Y") {
+    var firstLetters = (english.slice(0, 1));
+    var middleLetters = english.slice(1, index + english.length);
   } else {
     var firstLetters = english.slice(0, index);
     var middleLetters = english.slice(index);
@@ -29,9 +32,11 @@ var pigLatinWord = function(english) {
   if (!english.match(/^[a-zA-Z ]+$/)) {
     return ("Please enter text only - no characters that are not in the alphabet");
   } else if (vowelResult === false) {
-    return ("That's not a word.  Please enter a real word or phrase.");
+    return ("I cannot perform Pig Latin on a word with no vowels.");
   } else if (english.length === 1) {
     return english + "ay";
+  } else if (english[0] === "y" || english[0] === "Y" ) {
+    return leadingConsonants(english);
   } else if (vowels.includes(english.charAt(0))) {
     return english + "way";
   } else if (!vowels.includes(english[0])) {
@@ -56,7 +61,7 @@ var pigLatin = function(english) {
 }
 };
 
-// party logic
+// user interface logic
 $(document).ready(function() {
   $("#pigLatinForm").submit(function(event) {
     event.preventDefault();
